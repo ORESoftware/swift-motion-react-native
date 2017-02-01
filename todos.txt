@@ -17,3 +17,6 @@ react-native run-android
 https://medium.com/@jamesmarino/getting-started-with-react-native-and-firebase-ab1f396db549#.pxv504db2
 
 https://tadeuzagallo.com/blog/react-native-bridge/
+
+gradle-daemon
+https://docs.gradle.org/2.4/userguide/gradle_daemon.html

@@ -13,8 +13,6 @@ import {
 }
 from 'react-native';
 
-
-import socket from './shared/comm/handle-udp';
 import * as firebase from 'firebase';
 import Signup from './shared/components/signup';
 import Account from './shared/components/account';
