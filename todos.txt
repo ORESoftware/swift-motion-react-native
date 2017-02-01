@@ -1,0 +1,19 @@
+[01/29/2017, 00:20:19] <START> Transforming files
+(node:13081) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1299): UnableToResolveError: Unable to resolve module d3-shape from /home/oleg/ReactNativeProjects/AwesomeProject/index.android.js: Module does not exist in the module map or in these directories:
+  /home/oleg/ReactNativeProjects/AwesomeProject/node_modules
+
+This might be related to https://github.com/facebook/react-native/issues/4968
+To resolve try the following:
+  1. Clear watchman watches: `watchman watch-del-all`.
+  2. Delete the `node_modules` folder: `rm -rf node_modules && npm install`.
+  3. Reset packager cache: `rm -fr $TMPDIR/react-*` or `npm start -- --reset-cache`.
+(node:13081) DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+
+npm start
+react-native run-android
+
+
+https://medium.com/@jamesmarino/getting-started-with-react-native-and-firebase-ab1f396db549#.pxv504db2
+
+https://tadeuzagallo.com/blog/react-native-bridge/
