@@ -13,15 +13,16 @@ import {
 }
 from 'react-native';
 
-//
 
 import * as firebase from 'firebase';
 import Button from './button';
 import Header from './header';
 import Login from './login';
-import styles from '../styles/common.js';
+import styles from '../styles/common';
 import app from '../db/firebase-init'
 import socket from '../comm/handle-udp';
+import App from './weather/app';
+
 
 
 export default class Account extends Component {
@@ -47,6 +48,30 @@ export default class Account extends Component {
 
   }
 
+  logout(){
+
+      AsyncStorage.removeItem('user_data').then(() => {
+        firebase.auth().signOut().then(() => {
+           this.props.navigator.push({
+                component: Login
+              });
+        }, err => {
+            console.error(err.stack || err);
+            alert('Error: Could not log out.');
+        });
+
+      });
+
+    }
+
+
+   goToBetterWeather(){
+      this.props.navigator.push({
+            component: App
+       });
+   }
+
+
   render(){
 
     return (
@@ -68,27 +93,17 @@ export default class Account extends Component {
                   onpress={this.logout.bind(this)}
                   button_styles={styles.primary_button}
                   button_text_styles={styles.primary_button_text} />
+
+            <Button
+                text='BetterWeather'
+                onpress={this.goToBetterWeather.bind(this)}
+                button_styles={styles.primary_button}
+                button_text_styles={styles.primary_button_text} />
             </View>
         }
         </View>
       </View>
     );
-  }
-
-  logout(){
-
-    AsyncStorage.removeItem('user_data').then(() => {
-      firebase.auth().signOut().then(() => {
-         this.props.navigator.push({
-              component: Login
-            });
-      }, err => {
-          console.error(err.stack || err);
-          alert('Error: Could not log out.');
-      });
-
-    });
-
   }
 
 }

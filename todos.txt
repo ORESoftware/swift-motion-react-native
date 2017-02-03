@@ -10,13 +10,31 @@ To resolve try the following:
 (node:13081) DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 
 
+////////
+https://github.com/hswolff/BetterWeather
+
+//////////
 npm start
 react-native run-android
 
-
+////////////
 https://medium.com/@jamesmarino/getting-started-with-react-native-and-firebase-ab1f396db549#.pxv504db2
 
+
+/////////////
 https://tadeuzagallo.com/blog/react-native-bridge/
 
+
+/////////////
 gradle-daemon
 https://docs.gradle.org/2.4/userguide/gradle_daemon.html
+
+////////////////
+adb tcpip 5555
+adb connect <device-ip-address>
+adb devices #list devices attached
+https://developer.android.com/studio/command-line/adb.html
+
+
+////////////
+https://developer.android.com/studio/run/device.html

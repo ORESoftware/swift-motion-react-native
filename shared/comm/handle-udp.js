@@ -13,14 +13,7 @@ socket.bind(12345, '0.0.0.0', function(err){
 });
 
 socket.once('listening', function() {
-
   console.log('listening!!');
-//  var buf = toByteArray('excellent!')
-//  socket.send(buf, 0, buf.length, remotePort, remoteHost, function(err) {
-//    if (err) throw err
-//
-//    console.log('message was sent')
-//  })
 })
 
 socket.on('error', (err) => {
@@ -33,7 +26,7 @@ socket.on('message', function(msg, rinfo) {
 
 setInterval(function(){
 
-socket.send(Buffer.from('xyzm'), 0, 3, 12346,'10.0.0.24', function(err){
+socket.send(Buffer.from('xyzm'), 0, 3, 12345,'10.0.0.24', function(err){
       err && console.error(err.stack || err);
    });
 

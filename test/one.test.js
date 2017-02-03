@@ -18,14 +18,15 @@ server.on('listening', () => {
   console.log(`server listening ${address.address}:${address.port}`);
 });
 
-server.bind(12346, '10.0.0.24', function(err){
+server.bind(12346, '0.0.0.0', function(err){
     (err && console.error(err.stack || err)) || console.log('bound');
 });
 
 
 setInterval(function(){
 
-   server.send('abc', 0, 3, 12345,'0.0.0.0', function(err){
+console.log('sending...');
+   server.send('abc', 0, 3, 12345,'10.0.0.143', function(err){
         err && console.error(err.stack || err);
    });
 
