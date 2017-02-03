@@ -2,7 +2,7 @@
 
 const Buffer = global.Buffer = require('buffer').Buffer;
 
-var dgram = require('dgram')
+var dgram = require('dgram');
 // OR, if not shimming via package.json "browser" field:
 // var dgram = require('react-native-udp')
 
@@ -14,14 +14,15 @@ socket.bind(12345, '0.0.0.0', function(err){
 
 socket.once('listening', function() {
   console.log('listening!!');
-})
+});
+///
 
 socket.on('error', (err) => {
   console.log(`server error:\n${err.stack}`);
 });
 
 socket.on('message', function(msg, rinfo) {
-   console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
+   // console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
 setInterval(function(){

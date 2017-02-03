@@ -57,8 +57,8 @@ export function createLineGraph({
     const lastDatum = data[data.length - 1];
 
     const scaleX = createScaleX(
-        data[0].time,
-        lastDatum.time,
+        data[0] ? data[0].time : 30,
+        lastDatum ? lastDatum.time : 30,
         width
     );
 
@@ -80,8 +80,8 @@ export function createLineGraph({
     return {
         data,
         scale: {
-            x: scaleX,
-            y: scaleY,
+            x: scaleX || 1,
+            y: scaleY || 1,
         },
         path: lineShape(data),
         ticks: data.map((datum) => {

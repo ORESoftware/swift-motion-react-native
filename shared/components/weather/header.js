@@ -1,6 +1,8 @@
+
 import React, {
   PropTypes,
 } from 'react';
+
 import {
   StyleSheet,
   View,
@@ -19,6 +21,7 @@ export default function Header(props) {
     </View>
   );
 }
+
 Header.propTypes = {
   children: PropTypes.node.isRequired,
 };

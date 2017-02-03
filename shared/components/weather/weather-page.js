@@ -17,11 +17,12 @@ import ControlButton from './control-button';
 import WeatherGraph from './weather-graph';
 
 export default class WeatherPage extends Component {
+
   static propTypes = {
     changeAddress: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
     data: PropTypes.object.isRequired,
-  }
+  };
 
   state = {
     showMax: true,
@@ -38,14 +39,18 @@ export default class WeatherPage extends Component {
   setMin = this.onChange.bind(null, 'min');
 
   render() {
+
     const {
       name,
       changeAddress,
       data: graphData,
+
     } = this.props;
 
     const {
+
       showMax,
+
     } = this.state;
 
     const graphProps = {};

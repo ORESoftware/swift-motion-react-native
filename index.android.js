@@ -18,7 +18,9 @@ import Signup from './shared/components/signup';
 import Account from './shared/components/account';
 import Header from './shared/components/header';
 import app from './shared/db/firebase-init'
-import styles from './shared/styles/common.js';
+import styles from './shared/styles/common';
+
+
 
 class AwesomeProject extends Component {
 

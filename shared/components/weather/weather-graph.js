@@ -14,9 +14,7 @@ import {
 } from 'react-native';
 
 import Morph from 'art/morph/path';
-
 import * as graphUtils from './graph-utils';
-
 import Color from './color';
 
 const {
@@ -32,6 +30,7 @@ const AnimationDurationMs = 500;
 const dimensionWindow = Dimensions.get('window');
 
 export default class WeatherGraph extends Component {
+
   static propTypes = {
     /* eslint-disable react/no-unused-prop-types */
     data: PropTypes.array.isRequired,
@@ -40,7 +39,7 @@ export default class WeatherGraph extends Component {
     xAccessor: PropTypes.func.isRequired,
     yAccessor: PropTypes.func.isRequired,
     /* eslint-enable */
-  }
+  };
 
   static defaultProps = {
     width: Math.round(dimensionWindow.width * 0.9),
@@ -53,6 +52,11 @@ export default class WeatherGraph extends Component {
     linePath: '',
   };
 
+  constructor(props){
+    super(props);
+
+  }
+
   componentWillMount() {
     this.computeNextState(this.props);
   }
@@ -62,12 +66,15 @@ export default class WeatherGraph extends Component {
   }
 
   computeNextState(nextProps) {
+
     const {
+
       data,
       width,
       height,
       xAccessor,
       yAccessor,
+
     } = nextProps;
 
     const fullPaddingSize = PaddingSize * 2;

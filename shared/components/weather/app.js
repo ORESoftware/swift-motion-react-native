@@ -15,6 +15,12 @@ forecastio.initialize(config.forecastApiKey);
 
 const USE_FIXTURES = true;
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+});
+
 export default class BetterWeather extends Component {
 
   state = {
@@ -33,7 +39,7 @@ export default class BetterWeather extends Component {
           this.setState({ address, forecastIoData });
         });
     }
-  }
+  };
 
   resetAddress = () => this.changeAddress(null);
 
@@ -41,9 +47,7 @@ export default class BetterWeather extends Component {
     return (
       <View style={styles.container}>
         {this.state.address == null ?
-          <AddressPage
-            onAddressSet={this.changeAddress}
-          /> :
+          <AddressPage onAddressSet={this.changeAddress}/> :
           <WeatherPage
             name={this.state.address.name}
             data={this.state.forecastIoData}
@@ -55,8 +59,3 @@ export default class BetterWeather extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
