@@ -21,6 +21,7 @@
     "react-native": "0.40.0",
     "react-native-gifted-spinner": "^0.1.0",
     "react-native-level-fs": "^3.0.0",
+    "react-native-sqlite-storage": "^3.2.0",
     "react-native-udp": "^1.2.9",
     "rxjs": "^5.1.0",
     "siamese": "^2.0.4"

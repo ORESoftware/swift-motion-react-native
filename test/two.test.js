@@ -93,14 +93,14 @@ const dest = strm
 //  })
   .once('end', function () {
      console.log('data has ended')
-})
+});
 
 dest.on('error', function(e){
     console.error(e.stack || e);
-})
+});
 
 const obs = Rx.Observable.fromEvent(dest, 'data')
-      .eachWait(1000)
+      .eachWait(10);
 
 obs.subscribe(v => {
 
@@ -115,7 +115,8 @@ obs.subscribe(v => {
 //        ret[h] = split[i];
 //    });
 
-    server.send(JSON.stringify(v), 12345,'10.0.0.143', function(err){
+    console.log('sending...');
+    server.send(JSON.stringify(v), 1111,'192.168.4.10', function(err){
           err && console.error(err.stack || err);
      });
 });
